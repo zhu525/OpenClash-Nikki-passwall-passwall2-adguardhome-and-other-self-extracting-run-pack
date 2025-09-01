@@ -10,7 +10,7 @@
 ![Github](https://img.shields.io/badge/STORE商店.run-123456?logo=github&logoColor=fff&labelColor=9400D3&style=for-the-badge) 
 ![Github](https://img.shields.io/badge/ARGON主题.run-123456?logo=github&logoColor=fff&labelColor=1E90FF&style=for-the-badge) 
 ![Github](https://img.shields.io/badge/DUFS文件服务器.run-123456?logo=github&logoColor=fff&labelColor=00ae9d&style=for-the-badge)
-# 最新软件包： 
+# 最新软件包： https://github.com/zhu525/OpenClash-Nikki-passwall-passwall2-and-other-self-extracting-run-packages-suitable-for-OpenWRT/releases
 <img src="https://img.shields.io/github/downloads/wukongdaily/RunFilesBuilder/total.svg?style=for-the-badge&color=32C955"/>  [![GitHub Release](https://img.shields.io/github/v/release/wukongdaily/RunFilesBuilder?style=for-the-badge&logoColor=green&color=%23E1A8CD)](https://github.com/zhu525/OpenClash-Nikki-passwall-passwall2-and-other-self-extracting-run-packages-suitable-for-OpenWRT/releases)
 
 【[ENGLISH](https://github.com/wukongdaily/RunFilesBuilder/blob/master/README_en.md)】
