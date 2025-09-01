@@ -25,8 +25,6 @@
 ## 实现原理和操作指南
 [![操作步骤](https://img.shields.io/badge/YouTube-123456?logo=youtube&labelColor=ff0000)](https://youtu.be/o0TN8LV01i4) https://www.youtube.com/watch?v=o0TN8LV01i4
 
-## 原理解析
-https://wkdaily.cpolar.cn/archives/makerun
 ## run文件安装方法
 ## Install by iStore 
 <img src=https://camo.githubusercontent.com/0a783d7ece59c727a1eef024855606c2b87be6acec14192e8103cf8c601d44eb/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f41554b393532372f4172652d752d6f6b406d61737465722f617070732f696e7374616c6c2e706e67>
