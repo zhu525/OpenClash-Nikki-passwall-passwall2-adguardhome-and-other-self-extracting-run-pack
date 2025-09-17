@@ -10,7 +10,7 @@ name: Make momo run files 24.10
 
 on:
   schedule:
-    - cron: "0 22 * * *"  # 北京时间早上 6 点
+    - cron: "2 22 * * *"  # 北京时间早上 6 点02
   workflow_dispatch:
 
 jobs:

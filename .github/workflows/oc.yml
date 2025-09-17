@@ -10,7 +10,7 @@ name: Make OpenClash run files
 
 on:
   schedule:
-    - cron: "5 22 * * *"  # 北京时间早上 6 点 05
+    - cron: "8 22 * * *"  # 北京时间早上 6 点 08
   workflow_dispatch:
 
 jobs:

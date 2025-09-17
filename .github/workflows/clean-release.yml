@@ -1,10 +1,6 @@
 name: Cleanup Old Releases
 
 on:
-  schedule:
-    #- cron: "59 15 * * *"  # 北京时间23:59
-    - cron: "27 2 * * *"  # 北京时间10:27 test
-
   workflow_dispatch:
     inputs:
       keep_days:
