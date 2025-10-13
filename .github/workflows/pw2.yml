@@ -47,6 +47,7 @@ jobs:
             | jq -r '.assets[] | select(.name | test("passwall_packages_ipk_aarch64_cortex-a53\\.zip")) | .browser_download_url'
           )
 
+
           # 下载第一个 luci-24.10 ipk
           curl -L -O $(
             curl -s https://api.github.com/repos/xiaorouji/openwrt-passwall2/releases/latest \
