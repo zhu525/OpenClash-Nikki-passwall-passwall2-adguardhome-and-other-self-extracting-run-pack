@@ -195,8 +195,10 @@ jobs:
       - name: List depends ipks
         run: |
           echo "List x86 depends ipk files"
+          rm x86_64/depends/luci-app-trojan-server*
           ls -lh x86_64/depends/
           echo "List a53 depends ipk files"
+          rm a53/depends/luci-app-trojan-server*
           ls -lh a53/depends/
           mv x86_64/depends/luci-app-ssr-plus*.ipk x86_64/
           mv a53/depends/luci-app-ssr-plus*.ipk a53/

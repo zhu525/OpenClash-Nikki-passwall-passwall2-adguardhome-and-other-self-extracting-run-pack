@@ -1,0 +1,60 @@
+name: Transfer Uninstall Run File
+
+on:
+  schedule:
+    - cron: "0 22 * * *"  # UTC 22:00 = 北京时间 06:00
+  workflow_dispatch:
+
+jobs:
+  transfer:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Download run file
+        run: |
+          curl -L -o luci-app-uninstall.run https://plugin.vumstar.com/download/luci-app-uninstall.run
+
+      - name: Extract makeself run file
+        run: |
+          mkdir unpack
+          sh luci-app-uninstall.run --target unpack --keep > /dev/null 2>&1 || true
+          # 确保 VERSION 存在
+          if [ ! -f unpack/VERSION ]; then
+            echo "VERSION file missing!"
+            exit 1
+          fi
+
+      - name: Read Version
+        id: version
+        run: |
+          VERSION=$(cat unpack/VERSION | tr -d '\n' | tr -d ' ')
+          echo "VERSION=$VERSION"
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          mv luci-app-uninstall.run luci-app-uninstall-v${VERSION}.run
+ 
+      - name: Set tag name
+        id: vars
+        run: |
+          TODAY=$(date -u -d '+8 hour' +'%Y-%m-%d')
+          echo "tag_name=$TODAY" >> $GITHUB_ENV
+          
+      - name: Upload run files as release assets
+        uses: softprops/action-gh-release@v2.1.0
+        with:
+          tag_name: ${{ env.tag_name }}
+          name: "Daily Build - ${{ env.tag_name }}"
+          files: |
+            luci-app-uninstall*.run
+          token: ${{ secrets.GITHUB_TOKEN }}
+          body: |
+             <p align="left">
+              <img src="https://img.shields.io/github/downloads/wkccd/CloudRunFilesBuilder/${{ env.tag_name }}/total?style=for-the-badge&label=%E4%BB%8A%E6%97%A5%E4%B8%8B%E8%BD%BD%E6%AC%A1%E6%95%B0&labelColor=427e25&color=black"/>
+              <a href="https://wkdaily.cpolar.cn/archives/1">
+                <img src="https://img.shields.io/badge/可套用国内加速站下载-FC7C0D?logo=github&logoColor=fff&labelColor=000&style=for-the-badge"/>
+              </a>
+             </p>
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
